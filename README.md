@@ -7,13 +7,13 @@ Base de datos para el cotizador
 use Cotizador
 -- Tabla de Regiones
 CREATE TABLE Region (
-    RegionID INT PRIMARY KEY,
+    RegionID INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(50) NOT NULL
 );
 
 -- Tabla de Países
 CREATE TABLE Pais (
-    PaisID INT PRIMARY KEY,
+    PaisID INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(50) NOT NULL,
     RegionID INT,
     FOREIGN KEY (RegionID) REFERENCES Region(RegionID)
@@ -21,7 +21,7 @@ CREATE TABLE Pais (
 
 -- Tabla de Tarifas
 CREATE TABLE Tarifa (
-    TarifaID INT PRIMARY KEY,
+    TarifaID INT AUTO_INCREMENT PRIMARY KEY,
     Precio DECIMAL(10, 2) NOT NULL,
     RegionID INT,
     FOREIGN KEY (RegionID) REFERENCES Region(RegionID)
@@ -29,18 +29,17 @@ CREATE TABLE Tarifa (
 
 -- Tabla de Tipos de Cliente
 CREATE TABLE TipoCliente (
-    TipoClienteID INT PRIMARY KEY,
+    TipoClienteID INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(50) NOT NULL
 );
 
 -- Tabla de Descuentos
 CREATE TABLE Descuento (
-    DescuentoID INT PRIMARY KEY,
+    DescuentoID INT AUTO_INCREMENT PRIMARY KEY,
     TipoClienteID INT,
     Porcentaje DECIMAL(5, 2) NOT NULL,
     FOREIGN KEY (TipoClienteID) REFERENCES TipoCliente(TipoClienteID)
 );
-
 -- Inserts para Tipos de Cliente y Descuentos
 INSERT INTO TipoCliente (TipoClienteID, Nombre) VALUES
 (1, 'Cliente Estándar'),
