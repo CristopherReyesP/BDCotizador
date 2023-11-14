@@ -48,8 +48,8 @@ INSERT INTO TipoCliente (TipoClienteID, Nombre) VALUES
 
 INSERT INTO Descuento (DescuentoID, TipoClienteID, Porcentaje) VALUES
 (1, 1, 0),  -- Descuento del 0% para Cliente Estándar
-(2, 2, 5),  -- Descuento del 5% para Cliente Premium
-(3, 3, 10); -- Descuento del 10% para Cliente Super Premium
+(2, 2, 0.05),  -- Descuento del 5% para Cliente Premium
+(3, 3, 0.10); -- Descuento del 10% para Cliente Super Premium
 
 INSERT INTO Region (RegionID, Nombre) VALUES
 (1, 'África'),
